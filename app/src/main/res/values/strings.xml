@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">31 Days Praying Challenge!</string>
+
+    <!-- Wat Mangkon Kamalawat -->
+    <string name="wat_mangkon_name">Wat Mangkon Kamalawat</string>
+    <string name="wat_mangkon_note">Known for its Chinese-style architecture and Lunar New Year celebrations.</string>
+
+    <!-- Wat Hua Lamphong -->
+    <string name="wat_hua_lamphong_name">Wat Hua Lamphong</string>
+    <string name="wat_hua_lamphong_note">Famous for its merit-making traditions and cremation services for the poor.</string>
+
+    <!-- Wat Saket (Golden Mount) -->
+    <string name="wat_saket_name">Wat Saket (Golden Mount)</string>
+    <string name="wat_saket_note">Known for its iconic Golden Mount and panoramic city views.</string>
+
+    <!-- Wat Bowonniwet -->
+    <string name="wat_bowonniwet_name">Wat Bowonniwet</string>
+    <string name="wat_bowonniwet_note">Popular for its royal connections and serene atmosphere.</string>
+
+    <!-- Wat Arun (Temple of Dawn) -->
+    <string name="wat_arun_name">Wat Arun (Temple of Dawn)</string>
+    <string name="wat_arun_note">Famous for its riverside location and stunning architecture.</string>
+
+    <!-- Wat Pho (Temple of Reclining Buddha) -->
+    <string name="wat_pho_name">Wat Pho (Temple of Reclining Buddha)</string>
+    <string name="wat_pho_note">Renowned for its giant reclining Buddha and massage school.</string>
+
+    <!-- Wat Phra Kaew (Emerald Buddha) -->
+    <string name="wat_phra_kaew_name">Wat Phra Kaew (Emerald Buddha)</string>
+    <string name="wat_phra_kaew_note">Thailand most sacred temple, located within the Grand Palace.</string>
+
+    <!-- Wat Prayurawongsawat -->
+    <string name="wat_prayurawongsawat_name">Wat Prayurawongsawat</string>
+    <string name="wat_prayurawongsawat_note">Known for its large white chedi and peaceful surroundings.</string>
+
+    <!-- Wat Kalayanamitr -->
+    <string name="wat_kalayanamitr_name">Wat Kalayanamitr</string>
+    <string name="wat_kalayanamitr_note">Famous for its giant Buddha statue and riverside location.</string>
+
+    <!-- Wat Ratchanatdaram (Loha Prasat) -->
+    <string name="wat_loha_prasat_name">Wat Ratchanatdaram (Loha Prasat)</string>
+    <string name="wat_loha_prasat_note">Famous for its unique multi-tiered iron spires.</string>
+
+    <!-- Wat Pathum Wanaram -->
+    <string name="wat_pathum_wanaram_name">Wat Pathum Wanaram</string>
+    <string name="wat_pathum_wanaram_note">An oasis of tranquility in the heart of Bangkok shopping district.</string>
+
+    <!-- Wat Traimit (Golden Buddha) -->
+    <string name="wat_traimit_name">Wat Traimit (Golden Buddha)</string>
+    <string name="wat_traimit_note">Home to the world largest gold Buddha statue.</string>
+
+    <!-- Wat Benjamabophit (Marble Temple) -->
+    <string name="wat_benjamabophit_name">Wat Benjamabophit (Marble Temple)</string>
+    <string name="wat_benjamabophit_note">Famous for its stunning marble architecture.</string>
+
+    <!-- Wat Suthat -->
+    <string name="wat_suthat_name">Wat Suthat</string>
+    <string name="wat_suthat_note">Known for its giant swing and beautiful murals.</string>
+
+    <!-- Wat Chana Songkhram -->
+    <string name="wat_chana_songkhram_name">Wat Chana Songkhram</string>
+    <string name="wat_chana_songkhram_note">Popular among travelers for its location near Khaosan Road.</string>
+
+    <!-- Wat Mahathat -->
+    <string name="wat_mahathat_name">Wat Mahathat</string>
+    <string name="wat_mahathat_note">Famous for meditation classes and ancient ruins.</string>
+
+    <!-- Wat Yannawa -->
+    <string name="wat_yannawa_name">Wat Yannawa</string>
+    <string name="wat_yannawa_note">Known for its boat-shaped temple and riverside views.</string>
+
+    <!-- Wat Ratchabophit -->
+    <string name="wat_ratchabophit_name">Wat Ratchabophit</string>
+    <string name="wat_ratchabophit_note">Famous for its unique blend of Thai and Western architectural styles.</string>
+
+    <!-- Wat Intharawihan -->
+    <string name="wat_intharawihan_name">Wat Intharawihan</string>
+    <string name="wat_intharawihan_note">Known for its giant standing Buddha statue.</string>
+
+    <!-- Wat Prayoon -->
+    <string name="wat_prayoon_name">Wat Prayoon</string>
+    <string name="wat_prayoon_note">Features a unique turtle pond and serene environment.</string>
+
+    <!-- Wat Phra Sri Mahathat -->
+    <string name="wat_phra_sri_mahathat_name">Wat Phra Sri Mahathat</string>
+    <string name="wat_phra_sri_mahathat_note">A lesser-known gem with significant historical importance.</string>
+
+    <!-- Wat Suwannaram -->
+    <string name="wat_suwannaram_name">Wat Suwannaram</string>
+    <string name="wat_suwannaram_note">Famous for its ancient murals and peaceful setting.</string>
+
+    <!-- Wat Rakhang -->
+    <string name="wat_rakhang_name">Wat Rakhang</string>
+    <string name="wat_rakhang_note">Known as the Temple of Bells and its tranquil riverside location.</string>
+
+    <!-- Wat Paknam Phasi Charoen -->
+    <string name="wat_paknam_name">Wat Paknam Phasi Charoen</string>
+    <string name="wat_paknam_note">Home to a giant Buddha statue and a unique stupa.</string>
+
+    <!-- Wat Khun Chan -->
+    <string name="wat_khun_chan_name">Wat Khun Chan</string>
+    <string name="wat_khun_chan_note">Known for its striking Buddhist art and sculptures.</string>
+
+    <!-- Wat Nang Nong -->
+    <string name="wat_nang_nong_name">Wat Nang Nong</string>
+    <string name="wat_nang_nong_note">Features beautiful, lesser-known murals.</string>
+
+    <!-- Wat Hong Rattanaram -->
+    <string name="wat_hong_rattanaram_name">Wat Hong Rattanaram</string>
+    <string name="wat_hong_rattanaram_note">Famous for its peaceful surroundings and intricate designs.</string>
+
+    <!-- Wat Nak Prok -->
+    <string name="wat_nak_prok_name">Wat Nak Prok</string>
+    <string name="wat_nak_prok_note">A serene temple perfect for meditation and reflection.</string>
+
+    <!-- Wat Raja Orot -->
+    <string name="wat_raja_orot_name">Wat Raja Orot</string>
+    <string name="wat_raja_orot_note">Known for its modern yet traditional Buddhist architecture.</string>
+
+    <!-- Wat Chimplee -->
+    <string name="wat_chimplee_name">Wat Chimplee</string>
+    <string name="wat_chimplee_note">A charming local temple with a strong community focus.</string>
+
+    <!-- Wat Bang Phli Yai Klang -->
+    <string name="wat_bang_phli_yai_klang_name">Wat Bang Phli Yai Klang</string>
+    <string name="wat_bang_phli_yai_klang_note">Famous for its ancient reclining Buddha statue and floating market.</string>
+
+
+</resources>
