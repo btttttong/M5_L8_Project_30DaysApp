@@ -11,11 +11,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -30,6 +33,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -54,40 +58,81 @@ class MainActivity : ComponentActivity() {
 fun TempleApp() {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        topBar = { TempleAppBar() })
-    { paddingValues ->
-        TempleScreen(modifier = Modifier.padding(paddingValues))
+        topBar = { TempleAppBar() }
+    ) { paddingValues ->
+        val configuration = LocalConfiguration.current
+        val isPortrait = configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+        TempleScreen(
+            modifier = Modifier.padding(paddingValues),
+            isPortrait = isPortrait
+        )
     }
 }
 
 @Composable
-fun TempleScreen(modifier: Modifier = Modifier) {
-    TempleList(temples = temples, modifier = modifier)
+fun TempleScreen(modifier: Modifier = Modifier, isPortrait: Boolean) {
+    if (isPortrait) {
+        PortraitTempleList(temples = temples, modifier = modifier)
+    } else {
+        LandscapeTempleList(temples = temples, modifier = modifier)
+    }
 }
 
+
 @Composable
-fun TempleList(temples: List<Temple>, modifier: Modifier = Modifier) {
+fun PortraitTempleList(temples: List<Temple>, modifier: Modifier = Modifier) {
+    var expandedCardDay by remember { mutableStateOf<Int?>(null) }
     LazyColumn(modifier = modifier) {
         items(temples.size) { index ->
-            TempleCard(temple = temples[index])
+            TempleCard(
+                temple = temples[index],
+                isExpanded = expandedCardDay == temples[index].day,
+                onCardClick = { day ->
+                    expandedCardDay = if (expandedCardDay == day) null else day
+                }
+            )
         }
     }
 }
 
 @Composable
-fun TempleCard(temple: Temple) {
-    var isExpanded by remember { mutableStateOf(false) }
+fun LandscapeTempleList(temples: List<Temple>, modifier: Modifier = Modifier) {
+    var expandedCardDay by remember { mutableStateOf<Int?>(null) }
+    LazyRow(modifier = modifier) {
+        items(temples.size) { index ->
+            TempleCard(
+                temple = temples[index],
+                isExpanded = expandedCardDay == temples[index].day,
+                onCardClick = { day ->
+                    expandedCardDay = if (expandedCardDay == day) null else day
+                }
+            )
+        }
+    }
+}
+
+
+@Composable
+fun TempleCard(
+    temple: Temple,
+    isExpanded: Boolean,
+    onCardClick: (Int) -> Unit
+) {
+    val configuration = LocalConfiguration.current
+    val isPortrait = configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+    val cardWidth = if (isPortrait) Modifier.fillMaxWidth() else Modifier.width(300.dp)
+
     Card(
         modifier = Modifier
             .padding(8.dp)
-            .fillMaxWidth()
+            .then(cardWidth)
             .animateContentSize(
                 animationSpec = spring(
                     dampingRatio = Spring.DampingRatioMediumBouncy,
                     stiffness = Spring.StiffnessLow
                 )
             )
-            .clickable { isExpanded = !isExpanded },
+            .clickable { onCardClick(temple.day) },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
         ),
@@ -105,11 +150,8 @@ fun TempleCard(temple: Temple) {
                 text = stringResource(id = temple.locationName),
                 style = MaterialTheme.typography.displayMedium,
                 color = MaterialTheme.colorScheme.secondary,
-                modifier = Modifier.padding(
-                    vertical = dimensionResource(R.dimen.padding_small)
-                ),
-
-                )
+                modifier = Modifier.padding(vertical = dimensionResource(R.dimen.padding_small))
+            )
             Image(
                 painter = painterResource(id = temple.image),
                 contentDescription = stringResource(id = temple.locationName),
@@ -118,14 +160,13 @@ fun TempleCard(temple: Temple) {
                     .height(200.dp),
                 contentScale = ContentScale.Crop
             )
-
             if (isExpanded) {
+                Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = "Place: ${temple.place}",
                     style = MaterialTheme.typography.labelSmall,
-                    modifier = Modifier.padding(
-                        vertical = dimensionResource(R.dimen.padding_small)
-                    ),
+                    modifier = Modifier
+                        .padding(vertical = dimensionResource(R.dimen.padding_small)),
                     color = MaterialTheme.colorScheme.secondary
                 )
                 Text(
@@ -133,7 +174,6 @@ fun TempleCard(temple: Temple) {
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
-
         }
     }
 }
