@@ -10,6 +10,7 @@ import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -82,7 +83,10 @@ fun TempleScreen(modifier: Modifier = Modifier, isPortrait: Boolean) {
 @Composable
 fun PortraitTempleList(temples: List<Temple>, modifier: Modifier = Modifier) {
     var expandedCardDay by remember { mutableStateOf<Int?>(null) }
-    LazyColumn(modifier = modifier) {
+    LazyColumn(
+        modifier = modifier,
+        contentPadding = PaddingValues(top = 40.dp, bottom = 40.dp)
+    ) {
         items(temples.size) { index ->
             TempleCard(
                 temple = temples[index],
@@ -125,14 +129,9 @@ fun TempleCard(
     Card(
         modifier = Modifier
             .padding(8.dp)
-            .then(cardWidth)
-            .animateContentSize(
-                animationSpec = spring(
-                    dampingRatio = Spring.DampingRatioMediumBouncy,
-                    stiffness = Spring.StiffnessLow
-                )
-            )
-            .clickable { onCardClick(temple.day) },
+            .then(cardWidth),
+//            .clickable { onCardClick(temple.day) },
+        onClick = { onCardClick(temple.day) },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
         ),
@@ -140,7 +139,16 @@ fun TempleCard(
             containerColor = MaterialTheme.colorScheme.surface
         ),
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(
+            modifier = Modifier
+                .padding(16.dp)
+                .animateContentSize(
+                    animationSpec = spring(
+                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                        stiffness = Spring.StiffnessLow
+                    )
+                )
+        ) {
             Text(
                 text = "Day ${temple.day}",
                 style = MaterialTheme.typography.displayLarge,
